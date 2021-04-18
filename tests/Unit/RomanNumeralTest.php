@@ -3,10 +3,13 @@
 namespace Tests\Unit;
 
 use App\Services\RomanNumeralConverter;
-use PHPUnit\Framework\TestCase;
+use Tests\TestCase;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class RomanNumeralTest extends TestCase
 {
+    use RefreshDatabase;
+
     private RomanNumeralConverter $converter;
 
     protected function setUp(): void
@@ -18,6 +21,8 @@ class RomanNumeralTest extends TestCase
 
     public function testConvertsIntegersToRomanNumerals(): void
     {
+        $this->seed();
+
         // Test the basic conversions
         $toTest = [
             'I' => 1,
