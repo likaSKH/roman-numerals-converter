@@ -13,7 +13,11 @@ class RomanNumeralsToIntegerValuesSeeder extends Seeder
      */
     public function run()
     {
-        \DB::table('roman_numerals_to_integer_values')->insert(
+        $table = \DB::table('roman_numerals_to_integer_values');
+
+        $table->delete();
+
+        $table->insert(
             [
                 [
                     'roman_numeral' => 'M',
