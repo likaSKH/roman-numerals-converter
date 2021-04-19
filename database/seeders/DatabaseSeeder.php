@@ -13,8 +13,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(
-            RomanNumeralsToIntegerValuesSeeder::class,
-        );
+        $this->call(RomanNumeralsToIntegerValuesSeeder::class);
+        $this->call(ConvertedIntegersSeeder::class);
     }
 }
